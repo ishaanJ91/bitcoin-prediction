@@ -53,6 +53,8 @@ This model is particularly effective for sequential data. The architecture inclu
 ### Random Forest Regressor
 An ensemble method that operates by constructing multiple decision trees during training and outputting the mean prediction of individual trees.
 
+<br>
+
 ## ⚙️ Model Training Process
 
 ### Data Preprocessing

@@ -16,7 +16,7 @@ import matplotlib.pyplot as plt
 # CoinRanking API details
 api_url = "https://api.coinranking.com/v2"
 headers = {
-    'x-access-token': 'coinranking92a1fe6775ffcff15a80311d0fd8d2c2d1da46d6caf4cd04',
+    'x-access-token': 'YOUR_API_KEY',
 }
 
 # Clean data by dropping NaN values
@@ -125,6 +125,17 @@ print(f"Test set Mean Squared Error (MSE) - CNN + LSTM: {mse_test_cnn_lstm}")
 print(f"Test set Mean Absolute Percentage Error (MAPE) - CNN + LSTM: {mape_test_cnn_lstm}")
 accuracy = 100 - mape_test_cnn_lstm
 print(f"Accuracy of the CNN + LSTM model: {accuracy}%")
+
+# Calculate metrics for Random Forest
+mae_test_rf = mean_absolute_error(y_test, y_pred_rf)
+mse_test_rf = mean_squared_error(y_test, y_pred_rf)
+mape_test_rf = mean_absolute_percentage_error(y_test, y_pred_rf)
+
+print(f"Test set Mean Absolute Error (MAE) - Random Forest: {mae_test_rf}")
+print(f"Test set Mean Squared Error (MSE) - Random Forest: {mse_test_rf}")
+print(f"Test set Mean Absolute Percentage Error (MAPE) - Random Forest: {mape_test_rf}")
+accuracy = 100 - mape_test_rf
+print(f"Accuracy of the Random Forest model: {accuracy}%")
 
 # Plot the real and predicted data for both models
 plt.figure(figsize=(10, 5))
